@@ -1,0 +1,19 @@
+# Dépendances et outils
+node_modules/
+vendor/
+
+# Éditeurs et systèmes
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Journaux et fichiers temporaires
+*.log
+*.tmp
+
+# Configuration locale (mots de passe de la base de données, plus tard)
+app/config.local.php
+
+# Base SQLite locale (si driver = 'sqlite')
+database/*.sqlite
