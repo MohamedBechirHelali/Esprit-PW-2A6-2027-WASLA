@@ -89,12 +89,12 @@ Le projet suit l'architecture MVC vue en atelier : un **point d'entrée unique**
 │   └── Views/
 │       ├── frontoffice/
 │       │   ├── assets/            css/ js/ img/ fonts/ data/
-│       │   ├── partials/          head, header (menu), footer, scripts
+│       │   ├── partials/          head, spinner, navbar (menu dynamique), footer (+ back to top), scripts
 │       │   ├── pages/             accueil, services, à propos + un dossier par module
 │       │   └── layout.php
 │       └── backoffice/
 │           ├── assets/            admin.css, admin.js (la charte vient du Front Office)
-│           ├── partials/          head, sidebar (dynamique), header, footer, scripts
+│           ├── partials/          head (+ preloader), sidebar (dynamique), header, footer, scripts
 │           ├── pages/             dashboard + un dossier par module
 │           └── layout.php
 └── docs/                          UML, dictionnaire des entités, maquettes, plan d'intégration
@@ -107,7 +107,7 @@ index.php?page=carte
   → app/routes.php            'carte' => [InterruptionController, carte]
   → InterruptionController::carte()
   → Controller::render()      capture Views/frontoffice/pages/interruptions/carte.php dans $content
-  → Views/frontoffice/layout.php : head → header → $content → footer → scripts
+  → Views/frontoffice/layout.php : head → spinner → navbar → $content → footer → scripts
 ```
 
 **Documentation :**
@@ -121,8 +121,8 @@ index.php?page=carte
 
 | Membre | Module | GitHub |
 |---|---|---|
-| Houssem Belhaj | Module 1 — Interruptions, signalements & alertes | à compléter |
-| Hiba Bouzid | Module 2 — Analyse des factures & consommation | à compléter |
+| Houssem Belhaj | Module 1 — Interruptions, signalements & alertes | [@iForgotTheSemicolonAgainlol](https://github.com/iForgotTheSemicolonAgainlol) |
+| Hiba Bouzid | Module 2 — Analyse des factures & consommation | [@hibabouzid](https://github.com/hibabouzid) |
 | Louay Azzabi | Module 3 — Refuge Zones | à compléter |
 | Bechir Hellali | Module 4 — Assistance d'urgence, solaire & fournisseurs | [@MohamedBechirHelali](https://github.com/MohamedBechirHelali) |
 
@@ -149,8 +149,8 @@ php -v
 1. Cloner le dépôt :
 
    ```bash
-   git clone https://github.com/MohamedBechirHelali/WASLA.git
-   cd WASLA
+   git clone https://github.com/MohamedBechirHelali/Esprit-PW-2A6-2027-WASLA.git
+   cd Esprit-PW-2A6-2027-WASLA
    ```
 
 2. Lancer le projet, au choix :
@@ -163,7 +163,7 @@ php -v
 
      puis ouvrir <http://localhost:8000/index.php>.
 
-   * **Laragon / XAMPP / WAMP** : placer le dossier dans `C:\laragon\www` (Laragon), `htdocs` (XAMPP) ou `www` (WAMP), démarrer Apache, puis ouvrir `http://localhost/WASLA/index.php`.
+   * **Laragon / XAMPP / WAMP** : placer le dossier dans `C:\laragon\www` (Laragon), `htdocs` (XAMPP) ou `www` (WAMP), démarrer Apache, puis ouvrir `http://localhost/Esprit-PW-2A6-2027-WASLA/index.php`.
 
 > Les fichiers `.php` doivent passer par un serveur : ouverts par un double-clic, ils affichent le code brut au lieu de la page.
 
@@ -220,18 +220,16 @@ Dans le Back Office, l'entrée correspondante de la sidebar s'active automatique
 
 Organisation du travail en équipe :
 
-- `main` : version stable, présentée aux tuteurs ;
-- `develop` : intégration du travail de l'équipe ;
-- `feature/module1-interruptions`, `feature/module2-factures`, `feature/module3-refuges`, `feature/module4-assistance` : une branche par module.
-
-Chaque fonctionnalité passe par une **pull request** vers `develop`, relue par un autre membre.
+- `main` : branche principale, présentée aux tuteurs ;
+- chaque membre travaille sur la partie de son module (contrôleurs, vues, routes et entrées de la sidebar de son bloc) ;
+- pour une modification plus importante, créez une branche `feature/<module>-<sujet>` (par exemple `feature/module3-reservation`) et ouvrez une **pull request** vers `main`, relue par un autre membre.
 
 **Convention de commits :** `type(portée): message`, par exemple `feat(module3): formulaire de réservation`, `fix(front): lien actif de la navbar`, `docs: diagramme de classes`.
 
 Pour contribuer depuis un fork :
 
 ```bash
-git clone https://github.com/<votre-utilisateur>/WASLA.git
+git clone https://github.com/<votre-utilisateur>/Esprit-PW-2A6-2027-WASLA.git
 git checkout -b feature/ma-fonctionnalite
 git commit -m "feat(module): description"
 git push origin feature/ma-fonctionnalite
@@ -250,4 +248,6 @@ Les données, chiffres et statuts affichés sont **fictifs** et servent uniqueme
 
 ## Licence
 
-Projet académique réalisé à Esprit School of Engineering. Aucune licence open source n'a encore été choisie : sans licence, le code reste sous la protection du droit d'auteur de ses auteurs. L'équipe pourra ajouter un fichier `LICENSE` (par exemple MIT) avant une diffusion plus large.
+Ce projet est distribué sous la **licence MIT** : vous pouvez utiliser, modifier et redistribuer le code, à condition de conserver la mention de copyright et le texte de la licence. Voir le fichier [LICENSE](LICENSE).
+
+Projet académique réalisé à **Esprit School of Engineering** – Tunisia, 2026–2027.
