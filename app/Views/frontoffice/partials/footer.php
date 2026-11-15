@@ -62,3 +62,8 @@
     </div>
   </footer>
 
+
+  <!-- Back to Top -->
+  <a href="#" class="back-to-top" data-back-to-top aria-label="Retour en haut" hidden>
+    <span data-icon="arrow-up"></span>
+  </a>

@@ -17,3 +17,10 @@
   <link rel="stylesheet" href="<?= asset('css/admin.css', 'backoffice') ?>">
 </head>
 <body class="admin-body" data-page="<?= e($currentPage) ?>">
+  <!-- ======== Preloader ======== -->
+  <div id="preloader" class="preloader is-visible" role="status" aria-live="polite">
+    <div class="spinner__ring" aria-hidden="true"></div>
+    <span class="sr-only">Chargement…</span>
+  </div>
+  <noscript><style>#preloader { display: none; }</style></noscript>
+  <!-- ======== Preloader ======== -->

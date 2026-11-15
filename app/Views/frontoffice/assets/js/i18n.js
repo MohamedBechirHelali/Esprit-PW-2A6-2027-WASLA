@@ -15,6 +15,7 @@
   const D = {
     /* Shell, header, navigation */
     "Aller au contenu": ["Skip to content", "انتقل إلى المحتوى"],
+    "Retour en haut": ["Back to top", "العودة إلى الأعلى"],
     "Connecter. Anticiper.": ["Connect. Anticipate.", "نربط. نستبق."],
     "Protéger.": ["Protect.", "نحمي."],
     "Connecter. Anticiper. Protéger.": ["Connect. Anticipate. Protect.", "نربط. نستبق. نحمي."],

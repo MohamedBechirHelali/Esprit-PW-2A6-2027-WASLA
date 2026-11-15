@@ -219,7 +219,7 @@ Controller::render('carte')
       │   capture app/Views/frontoffice/pages/carte.php dans $content
       ▼
 app/Views/frontoffice/layout.php
-      head.php → header.php → $content → footer.php → scripts.php
+      head.php → spinner.php → navbar.php → $content → footer.php → scripts.php
       │
       ▼
 Page HTML finale, identique visuellement à carte.html
@@ -276,8 +276,9 @@ Esprit-PW-<Classe>-<AU>-Wasla/              ← nom à confirmer (section 10)
 │       │   │   ├── css/   js/   img/   fonts/   data/
 │       │   ├── partials/
 │       │   │   ├── head.php                ← <!DOCTYPE> … <head> … </head><body>
-│       │   │   ├── header.php              ← skip-link + site-header + racines mobile/recherche
-│       │   │   ├── footer.php              ← site-footer
+│       │   │   ├── spinner.php             ← spinner de chargement (juste après <body>)
+│       │   │   ├── navbar.php              ← skip-link + site-header (menu dynamique) + racines mobile/recherche
+│       │   │   ├── footer.php              ← site-footer + bouton « Back to top »
 │       │   │   └── scripts.php             ← scripts communs + scripts de la page + </body></html>
 │       │   ├── pages/
 │       │   │   ├── accueil.php  services.php  a-propos.php     ← commun (équipe)
@@ -291,7 +292,7 @@ Esprit-PW-<Classe>-<AU>-Wasla/              ← nom à confirmer (section 10)
 │           ├── assets/                     ← admin.css, admin.js, img/ (tokens.css, polices et icônes
 │           │                                  sont repris de frontoffice/assets : une seule charte)
 │           ├── partials/
-│           │   ├── head.php  sidebar.php  header.php  footer.php  scripts.php
+│           │   ├── head.php (+ preloader)  sidebar.php  header.php  footer.php  scripts.php
 │           ├── pages/
 │           │   ├── dashboard.php                ← commun
 │           │   ├── interruptions/   factures/   refuges/   assistance/   ← un dossier par module

@@ -235,6 +235,8 @@
     renderSparks();
     setupTables();
     setupForms();
+    const preloader = document.getElementById("preloader");
+    if (preloader) preloader.classList.remove("is-visible");
   });
 
   window.WASLA_adminToast = toast;

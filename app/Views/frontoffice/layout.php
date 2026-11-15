@@ -1,9 +1,10 @@
 <?php
 
-require __DIR__ . '/partials/head.php';
-require __DIR__ . '/partials/header.php';
+require_once __DIR__ . '/partials/head.php';
+require_once __DIR__ . '/partials/spinner.php';
+require_once __DIR__ . '/partials/navbar.php';
 
 echo $content;
 
-require __DIR__ . '/partials/footer.php';
-require __DIR__ . '/partials/scripts.php';
+require_once __DIR__ . '/partials/footer.php';
+require_once __DIR__ . '/partials/scripts.php';

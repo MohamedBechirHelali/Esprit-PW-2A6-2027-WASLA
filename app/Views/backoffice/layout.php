@@ -8,13 +8,13 @@
  *   $pageScripts   scripts partagés à charger depuis frontoffice/assets (ex. js/charts.js)
  *   $content       HTML de la page (déjà rendu)
  */
-require __DIR__ . '/partials/head.php';
+require_once __DIR__ . '/partials/head.php';
 ?>
   <div class="admin">
-<?php require __DIR__ . '/partials/sidebar.php'; ?>
+<?php require_once __DIR__ . '/partials/sidebar.php'; ?>
 
     <div class="admin-main">
-<?php require __DIR__ . '/partials/header.php'; ?>
+<?php require_once __DIR__ . '/partials/header.php'; ?>
 
       <main class="admin-content" id="main">
 <?php foreach (takeFlashes() as $flash): ?>
@@ -23,7 +23,7 @@ require __DIR__ . '/partials/head.php';
 <?= $content ?>
       </main>
 
-<?php require __DIR__ . '/partials/footer.php'; ?>
+<?php require_once __DIR__ . '/partials/footer.php'; ?>
     </div>
   </div>
-<?php require __DIR__ . '/partials/scripts.php'; ?>
+<?php require_once __DIR__ . '/partials/scripts.php'; ?>
