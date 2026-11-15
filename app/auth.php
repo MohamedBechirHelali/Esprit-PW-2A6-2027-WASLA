@@ -1,8 +1,5 @@
 <?php
-/**
- * Session et authentification : utilisateur connecté, protection des pages,
- * jeton CSRF et messages flash.
- */
+
 
 declare(strict_types=1);
 
