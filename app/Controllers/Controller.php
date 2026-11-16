@@ -15,6 +15,9 @@ abstract class Controller
     /** Scripts communs à la plupart des pages FO (i18n.js et motion.js sont ajoutés par scripts.php). */
     protected const FO_SCRIPTS = ['js/data.js', 'js/icons.js', 'js/layout.js', 'js/pages.js'];
 
+    /** Scripts communs aux six pages « Services » (données de démonstration + outils partagés). */
+    protected const SERVICE_SCRIPTS = ['js/data.js', 'js/icons.js', 'js/layout.js', 'js/services/demo-data.js', 'js/services/core.js'];
+
     /** Clé de la page courante, utilisée par la navbar / la sidebar pour l'état actif. */
     protected string $page = 'accueil';
 
@@ -46,5 +49,32 @@ abstract class Controller
         $content = ob_get_clean();
 
         require $viewsDir . '/layout.php';
+    }
+
+    /**
+     * Affiche une page du menu « Services » (Front Office).
+     *
+     * @param string $view        vue dans pages/ (ex. 'assistance/relais')
+     * @param string $page        clé de la page (routes.php)
+     * @param string $title       titre de l'onglet
+     * @param string $description meta description
+     * @param string $script      script propre au service (ex. 'relais' → js/services/relais.js)
+     * @param bool   $withMap     true si la page affiche la carte de Tunisie
+     */
+    protected function renderService(string $view, string $page, string $title, string $description, string $script, bool $withMap = false): void
+    {
+        $scripts = self::SERVICE_SCRIPTS;
+        if ($withMap) {
+            array_unshift($scripts, 'data/tunisia.js');
+        }
+        $scripts[] = 'js/services/' . $script . '.js';
+
+        $this->render($view, [
+            'page'        => $page,
+            'title'       => $title,
+            'description' => $description,
+            'css'         => $withMap ? ['home', 'pages', 'services'] : ['pages', 'services'],
+            'scripts'     => $scripts,
+        ]);
     }
 }

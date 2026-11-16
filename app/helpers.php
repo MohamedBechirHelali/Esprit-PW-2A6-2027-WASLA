@@ -5,6 +5,9 @@
 
 declare(strict_types=1);
 
+/** Pages du menu « Services » : le lien Services du menu reste actif sur chacune d'elles. */
+const SERVICE_PAGES = ['services', 'alertes', 'factures', 'fournisseurs', 'refuges', 'relais', 'sante'];
+
 /**
  * Retourne la classe CSS « active » si $page est la page courante.
  * Même rôle que navActive() dans l'atelier.

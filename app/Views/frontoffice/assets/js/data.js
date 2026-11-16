@@ -77,7 +77,7 @@
       description:
         "Choisissez vos gouvernorats et vos seuils pour recevoir une notification avant chaque coupure ou pic de consommation.",
       points: ["Notifications push et e-mail", "Seuils personnalisables", "Historique des alertes"],
-      link: "index.php?page=connexion"
+      link: "index.php?page=alertes"
     },
     {
       id: "factures",
@@ -87,7 +87,7 @@
       description:
         "Retrouvez vos factures d'eau et d'électricité, suivez vos paiements et laissez l'IA détecter les anomalies de consommation.",
       points: ["Lecture assistée par IA", "Suivi des paiements", "Conseils d'économie"],
-      link: "index.php?page=connexion"
+      link: "index.php?page=factures"
     },
     {
       id: "fournisseurs",
@@ -97,7 +97,7 @@
       description:
         "Consultez l'annuaire des fournisseurs agréés et trouvez un technicien proche de chez vous pour vos interventions.",
       points: ["Annuaire vérifié", "Recherche par gouvernorat", "Demande d'intervention"],
-      link: "index.php?page=services#fournisseurs"
+      link: "index.php?page=fournisseurs"
     },
     {
       id: "refuge",
@@ -107,7 +107,7 @@
       description:
         "Localisez les espaces climatisés et les points d'eau potable ouverts au public pendant les épisodes de coupure.",
       points: ["Points d'accueil cartographiés", "Horaires en temps réel", "Itinéraire accessible"],
-      link: "index.php?page=carte"
+      link: "index.php?page=refuges"
     },
     {
       id: "relais",
@@ -117,7 +117,7 @@
       description:
         "Partagez un réfrigérateur, une batterie ou un groupe électrogène avec vos voisins grâce au réseau solidaire WASLA.",
       points: ["Entraide de proximité", "Réservation simple", "Réseau de confiance"],
-      link: "index.php?page=services#relais"
+      link: "index.php?page=relais"
     },
     {
       id: "sante",
@@ -127,7 +127,7 @@
       description:
         "Signalez les besoins vitaux (dialyse, oxygène, chaîne du froid) pour être priorisé lors des rétablissements de réseau.",
       points: ["Priorisation des urgences", "Contact direct", "Confidentialité des données"],
-      link: "index.php?page=connexion"
+      link: "index.php?page=sante"
     }
   ];
 
@@ -138,12 +138,12 @@
     { title: "Services", description: "Alertes, factures, fournisseurs et entraide", url: "index.php?page=services", icon: "layers" },
     { title: "À propos", description: "Mission et engagements de WASLA", url: "index.php?page=a-propos", icon: "info" },
     { title: "Connexion", description: "Accéder à votre espace citoyen", url: "index.php?page=connexion", icon: "user" },
-    { title: "Alertes personnalisées", description: "Recevoir les alertes de votre zone", url: "index.php?page=services#alertes", icon: "bell" },
-    { title: "Factures & IA", description: "Suivre et analyser vos factures", url: "index.php?page=services#factures", icon: "file-text" },
-    { title: "Fournisseurs", description: "Trouver un fournisseur agréé", url: "index.php?page=services#fournisseurs", icon: "wrench" },
-    { title: "Zones refuge", description: "Points d'accueil pendant une coupure", url: "index.php?page=services#refuge", icon: "home" },
-    { title: "Relais de voisinage", description: "Partager une ressource avec ses voisins", url: "index.php?page=services#relais", icon: "snowflake" },
-    { title: "Priorité santé", description: "Signaler un besoin vital", url: "index.php?page=services#sante", icon: "heart-pulse" }
+    { title: "Alertes personnalisées", description: "Recevoir les alertes de votre zone", url: "index.php?page=alertes", icon: "bell" },
+    { title: "Factures & IA", description: "Suivre et analyser vos factures", url: "index.php?page=factures", icon: "file-text" },
+    { title: "Fournisseurs", description: "Trouver un fournisseur agréé", url: "index.php?page=fournisseurs", icon: "wrench" },
+    { title: "Zones refuge", description: "Points d'accueil pendant une coupure", url: "index.php?page=refuges", icon: "home" },
+    { title: "Relais de voisinage", description: "Partager une ressource avec ses voisins", url: "index.php?page=relais", icon: "snowflake" },
+    { title: "Priorité santé", description: "Signaler un besoin vital", url: "index.php?page=sante", icon: "heart-pulse" }
   ];
 
   const analytics = {

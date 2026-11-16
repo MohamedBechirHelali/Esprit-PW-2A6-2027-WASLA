@@ -18,6 +18,7 @@ return [
     'carte'                   => ['InterruptionController', 'carte'],
     'admin-interruptions'     => ['InterruptionController', 'adminListe'],   // BO
     'admin-interruption-form' => ['InterruptionController', 'adminForm'],    // BO
+    'alertes'                 => ['AlerteController', 'index'],              // Service « Alertes personnalisées »
 
     // ── Module 2 — Analyse des factures & consommation (Hiba) ─────────
     'connexion'   => ['UtilisateurController', 'connexion'],
@@ -25,8 +26,13 @@ return [
     'deconnexion' => ['UtilisateurController', 'deconnexion'],
     'mon-compte'  => ['UtilisateurController', 'monCompte'],
     'analyses'  => ['ConsommationController', 'analyses'],
+    'factures'  => ['FactureController', 'index'],                           // Service « Factures & IA »
 
     // ── Module 3 — Refuge Zones (Louay) ───────────────────────────────
+    'refuges' => ['RefugeZoneController', 'index'],                          // Service « Zones refuge »
 
     // ── Module 4 — Assistance d'urgence, solaire & fournisseurs (Bechir)
+    'fournisseurs' => ['FournisseurController', 'index'],                    // Service « Fournisseurs »
+    'relais'       => ['DemandeAssistanceController', 'relais'],             // Service « Relais de voisinage »
+    'sante'        => ['DemandeAssistanceController', 'sante'],              // Service « Priorité santé »
 ];

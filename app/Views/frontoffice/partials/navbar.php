@@ -22,18 +22,18 @@
         <a class="nav-link <?= isActive('carte', $currentPage) ?>" href="<?= url('carte') ?>" data-nav="carte" <?= ariaCurrent('carte', $currentPage) ?>>Carte</a>
         <a class="nav-link <?= isActive('analyses', $currentPage) ?>" href="<?= url('analyses') ?>" data-nav="analyses" <?= ariaCurrent('analyses', $currentPage) ?>>Analyses</a>
         <div class="nav-item">
-          <button class="nav-link <?= isActive('services', $currentPage) ?>" type="button" data-dropdown-toggle data-nav="services" aria-expanded="false" aria-controls="services-dropdown">
+          <button class="nav-link <?= in_array($currentPage, SERVICE_PAGES, true) ? 'is-active' : '' ?>" type="button" data-dropdown-toggle data-nav="services" aria-expanded="false" aria-controls="services-dropdown">
             Services
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
           </button>
           <div class="dropdown" id="services-dropdown" hidden>
             <p class="dropdown__label">Services citoyens</p>
-            <a href="<?= url('services', 'alertes') ?>"><span class="dropdown__icon" data-icon="bell"></span><span class="dropdown__text">Alertes personnalisées<small>Notifications ciblées</small></span></a>
-            <a href="<?= url('services', 'factures') ?>"><span class="dropdown__icon" data-icon="file-text"></span><span class="dropdown__text">Factures &amp; IA<small>Suivi et analyse</small></span></a>
-            <a href="<?= url('services', 'fournisseurs') ?>"><span class="dropdown__icon" data-icon="wrench"></span><span class="dropdown__text">Fournisseurs<small>Techniciens agréés</small></span></a>
-            <a href="<?= url('services', 'refuge') ?>"><span class="dropdown__icon" data-icon="home"></span><span class="dropdown__text">Zones refuge<small>Points d'accueil</small></span></a>
-            <a href="<?= url('services', 'relais') ?>"><span class="dropdown__icon" data-icon="snowflake"></span><span class="dropdown__text">Relais de voisinage<small>Entraide locale</small></span></a>
-            <a href="<?= url('services', 'sante') ?>"><span class="dropdown__icon" data-icon="heart-pulse"></span><span class="dropdown__text">Priorité santé<small>Besoins vitaux</small></span></a>
+            <a href="<?= url('alertes') ?>"><span class="dropdown__icon" data-icon="bell"></span><span class="dropdown__text">Alertes personnalisées<small>Notifications ciblées</small></span></a>
+            <a href="<?= url('factures') ?>"><span class="dropdown__icon" data-icon="file-text"></span><span class="dropdown__text">Factures &amp; IA<small>Suivi et analyse</small></span></a>
+            <a href="<?= url('fournisseurs') ?>"><span class="dropdown__icon" data-icon="wrench"></span><span class="dropdown__text">Fournisseurs<small>Techniciens agréés</small></span></a>
+            <a href="<?= url('refuges') ?>"><span class="dropdown__icon" data-icon="home"></span><span class="dropdown__text">Zones refuge<small>Points d'accueil</small></span></a>
+            <a href="<?= url('relais') ?>"><span class="dropdown__icon" data-icon="snowflake"></span><span class="dropdown__text">Relais de voisinage<small>Entraide locale</small></span></a>
+            <a href="<?= url('sante') ?>"><span class="dropdown__icon" data-icon="heart-pulse"></span><span class="dropdown__text">Priorité santé<small>Besoins vitaux</small></span></a>
           </div>
         </div>
         <a class="nav-link <?= isActive('a-propos', $currentPage) ?>" href="<?= url('a-propos') ?>" data-nav="a-propos" <?= ariaCurrent('a-propos', $currentPage) ?>>À propos</a>

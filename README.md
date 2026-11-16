@@ -58,6 +58,8 @@ Tables partagées par les 4 modules : **Utilisateur**, dont le rôle est une val
 |---|---|
 | ![Carte](docs/screenshots/carte-1440-full.png) | ![Analyses](docs/screenshots/analyses-1440-full.png) |
 
+**Les six services citoyens** (menu « Services ») sont des interfaces interactives : centre d'alertes avec lieux suivis et préférences, suivi des factures avec graphiques, lecture et analyse simulées et assistant, annuaire de professionnels avec demandes d'intervention, carte des zones refuge, relais de voisinage avec rapprochement offres / demandes, et enregistrement « Priorité santé » avec espace de coordination réservé aux comptes autorisés. Leurs données de démonstration sont centralisées dans `assets/js/services/demo-data.js` et les actions de l'utilisateur sont conservées dans le navigateur (`localStorage`) en attendant le backend.
+
 > **État actuel.** Les interfaces sont intégrées dans l'architecture MVC. L'**inscription, la connexion, la déconnexion et l'accès au Back Office** utilisent la base de données (table `utilisateur`) ; les autres modules affichent encore des **données de démonstration**.
 
 ## Tech Stack
@@ -91,6 +93,8 @@ Le projet suit l'architecture MVC vue en atelier : un **point d'entrée unique**
 │       │   ├── assets/            css/ js/ img/ fonts/ data/
 │       │   ├── partials/          head, spinner, navbar (menu dynamique), footer (+ back to top), scripts
 │       │   ├── pages/             accueil, services, à propos + un dossier par module
+│       │   │                      (dont les 6 services : alertes, factures-ia, zones-refuge,
+│       │   │                       fournisseurs, relais, sante)
 │       │   └── layout.php
 │       └── backoffice/
 │           ├── assets/            admin.css, admin.js (la charte vient du Front Office)
@@ -205,6 +209,12 @@ php -v
 | Connexion | `index.php?page=connexion` |
 | Créer un compte | `index.php?page=inscription` |
 | Espace personnel (connecté) | `index.php?page=mon-compte` |
+| Service — Alertes personnalisées | `index.php?page=alertes` |
+| Service — Factures & IA | `index.php?page=factures` |
+| Service — Fournisseurs | `index.php?page=fournisseurs` |
+| Service — Zones refuge | `index.php?page=refuges` |
+| Service — Relais de voisinage | `index.php?page=relais` |
+| Service — Priorité santé | `index.php?page=sante` |
 | Back Office — tableau de bord (admin connecté) | `index.php?page=dashboard` |
 | Back Office — interruptions | `index.php?page=admin-interruptions` |
 

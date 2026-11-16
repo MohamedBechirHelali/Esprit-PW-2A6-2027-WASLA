@@ -9,6 +9,9 @@
   const PREFS = window.WASLA_PREFS;
   const t = window.WASLA_t || ((value) => value);
 
+  // Pages du menu « Services » : le bouton Services reste actif sur chacune d'elles.
+  const SERVICE_PAGES = ["services", "alertes", "factures", "fournisseurs", "refuges", "relais", "sante"];
+
   const navItems = [
     { label: "Accueil", href: "index.php?page=accueil", page: "accueil" },
     { label: "Carte", href: "index.php?page=carte", page: "carte" },
@@ -18,12 +21,12 @@
       href: "index.php?page=services",
       page: "services",
       children: [
-        { label: "Alertes personnalisées", href: "index.php?page=services#alertes", icon: "bell" },
-        { label: "Factures & IA", href: "index.php?page=services#factures", icon: "file-text" },
-        { label: "Fournisseurs", href: "index.php?page=services#fournisseurs", icon: "wrench" },
-        { label: "Zones refuge", href: "index.php?page=services#refuge", icon: "home" },
-        { label: "Relais de voisinage", href: "index.php?page=services#relais", icon: "snowflake" },
-        { label: "Priorité santé", href: "index.php?page=services#sante", icon: "heart-pulse" }
+        { label: "Alertes personnalisées", href: "index.php?page=alertes", icon: "bell" },
+        { label: "Factures & IA", href: "index.php?page=factures", icon: "file-text" },
+        { label: "Fournisseurs", href: "index.php?page=fournisseurs", icon: "wrench" },
+        { label: "Zones refuge", href: "index.php?page=refuges", icon: "home" },
+        { label: "Relais de voisinage", href: "index.php?page=relais", icon: "snowflake" },
+        { label: "Priorité santé", href: "index.php?page=sante", icon: "heart-pulse" }
       ]
     },
     { label: "À propos", href: "index.php?page=a-propos", page: "a-propos" }
@@ -57,7 +60,8 @@
 
   function setActiveNav() {
     document.querySelectorAll("[data-nav]").forEach((link) => {
-      const isActive = link.getAttribute("data-nav") === currentPage;
+      const page = link.getAttribute("data-nav");
+      const isActive = page === currentPage || (page === "services" && SERVICE_PAGES.includes(currentPage));
       link.classList.toggle("is-active", isActive);
       if (isActive) link.setAttribute("aria-current", "page");
       else link.removeAttribute("aria-current");
